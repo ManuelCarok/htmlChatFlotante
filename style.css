@@ -26,8 +26,8 @@ body {
 .chat_on {
     position: fixed;
     z-index: 10;
-    width: 45px;
-    height: 45px;
+    width: 60px;
+    height: 60px;
     right: 15px;
     bottom: 20px;
     background-color: rgb(22, 46, 98);
@@ -42,10 +42,12 @@ body {
 
 .chat_on_icon {
     color: #fff;
-    font-size: 25px;
     text-align: center;
 }
 
+.chat_on_icon>i {
+    line-height: 40px;
+}
 
 /*
 #Smallchat,#Smallchat * {
@@ -545,11 +547,15 @@ body {
 
 #Smallchat .Messenger_header .Avatar {
     margin-right: 5px;
-    opacity: 0;
+    /* opacity: 0; */
     -webkit-animation: fadein .15s .3s;
     animation: fadein .15s .3s;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards
+}
+
+.Avatar>i {
+    line-height: 25px;
 }
 
 #Smallchat .Avatar {
@@ -562,7 +568,7 @@ body {
     flex-shrink: 0;
     overflow: hidden;
     border-radius: 10%;
-    background-color: #96aab4
+    /* background-color: #96aab4 */
 }
 
 #Smallchat .Avatar-round {

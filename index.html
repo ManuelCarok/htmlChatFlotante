@@ -22,10 +22,17 @@
                     <div class="Messenger_messenger">
                         <div class="Messenger_header"
                             style="background-color: rgb(22, 46, 98); color: rgb(255, 255, 255);">
-                            <h4 class="Messenger_prompt">Chat</h4> <span class="chat_close_icon"><i
-                                    class="fa fa-times"></i></span>
+
+                            <div class="Avatar" style="width: 24px; height: 24px; display: none;" id="btnVolver">
+                                <i class="fas fa-arrow-left fa-sm"></i>
+                            </div>
+
+                            <h4 class="Messenger_prompt">Chat</h4>
+                            <span class="chat_close_icon" id="btnCloseChat">
+                                <i class="fa fa-times"></i>
+                            </span>
                         </div>
-                        <div class="Messenger_content" style="display: none;">
+                        <div class="Messenger_content" id="listMensajes" style="display: none;">
                             <!-- Chat Mensajes -->
                             <div class="Messages">
 
@@ -82,9 +89,9 @@
                             <!-- Chat Mensajes -->
                         </div>
 
-                        <div class="Messenger_content">
+                        <div class="Messenger_content" id="listUsuarios">
                             <ui class="contacts">
-                                <li class="active">
+                                <li class="active" id="1">
                                     <div class="d-flex bd-highlight">
                                         <div class="img_cont">
                                             <img src="https://i.pinimg.com/originals/54/6e/6d/546e6d4c6ce4322e6aa3b2f8ca73ac28.jpg"
@@ -97,7 +104,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li>
+                                <li id="2">
                                     <div class="d-flex bd-highlight">
                                         <div class="img_cont">
                                             <img src="https://2.bp.blogspot.com/-8ytYF7cfPkQ/WkPe1-rtrcI/AAAAAAAAGqU/FGfTDVgkcIwmOTtjLka51vineFBExJuSACLcBGAs/s320/31.jpg"
@@ -116,9 +123,9 @@
                     </div>
                 </div>
                 <!--===============CHAT ON BUTTON STRART===============-->
-                <div class="chat_on">
+                <div class="chat_on" id="btnChat">
                     <span class="chat_on_icon">
-                        <i class="fa fa-comment" aria-hidden="true"></i>
+                        <i class="fa fa-comment fa-2x" aria-hidden="true"></i>
                     </span>
                 </div>
                 <!--===============CHAT ON BUTTON END===============-->
@@ -131,16 +138,30 @@
 
     <script>
         $(document).ready(function () {
-            $(".chat_on").click(function () {
+            $("#btnChat").click(function () {
                 $(".Layout").toggle();
                 $(".chat_on").hide(300);
             });
 
-            $(".chat_close_icon").click(function () {
+            $("#btnCloseChat").click(function () {
                 $(".Layout").hide();
                 $(".chat_on").show(300);
             });
 
+            $("#listUsuarios ui li").click(function () {
+                $("#listUsuarios ui li").removeClass("active");
+                $(this).addClass("active");
+                $("#listUsuarios").hide();
+                $("#listMensajes").show();
+                $("#btnVolver").show();
+                //alert("click " + $(this).attr("id"));
+            });
+
+            $("#btnVolver").click(function() {
+                $("#listMensajes").hide();
+                $("#listUsuarios").show();
+                $("#btnVolver").hide();
+            });
         });
     </script>
 </body>
