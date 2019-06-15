@@ -1,0 +1,148 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chat</title>
+    <link href="./assets/bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="./assets/fontawesome-free-5.9.0-web/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./chat-list.css">
+</head>
+
+<body>
+
+    <!-- CHAT -->
+    <div class="container">
+        <div class="row">
+            <div id="Smallchat">
+                <div class="Layout Layout-open Layout-expand Layout-right"
+                    style="background-color: #3F51B5;color: rgb(255, 255, 255);opacity: 5;border-radius: 10px;">
+                    <div class="Messenger_messenger">
+                        <div class="Messenger_header"
+                            style="background-color: rgb(22, 46, 98); color: rgb(255, 255, 255);">
+                            <h4 class="Messenger_prompt">Chat</h4> <span class="chat_close_icon"><i
+                                    class="fa fa-times"></i></span>
+                        </div>
+                        <div class="Messenger_content" style="display: none;">
+                            <!-- Chat Mensajes -->
+                            <div class="Messages">
+
+                                <div class="Messages_list">
+                                    <div class="Message Message-client Message-last">
+                                        <div class="Message_content">
+                                            <div class="SlackText"><span>Hola</span></div>
+                                        </div><span class="Message_timestamp">9:53 PM</span>
+                                    </div>
+
+                                    <div class="Message Message-app Message-last">
+                                        <div class="AppIcon">
+                                            <div class="Icon" style="width: 14px; height: 14px;">
+                                                <span>AU</span>
+                                            </div>
+                                        </div>
+                                        <div class="Message_content">
+                                            <div class="SlackText"><span>Gracias Manuel! Recibirá una respuesta aquí
+                                                    o
+                                                    nos pondremos en contacto con usted en <a
+                                                        href="mailto:example@gmail.com"
+                                                        class="linkified">example@gmail.com</a>.</span></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="Message Message-slack Message-last">
+                                        <div class="AppIcon">
+                                            <div class="Icon" style="width: 14px; height: 14px;">
+                                                <span>MC</span>
+                                            </div>
+                                        </div>
+                                        <div class="Message_content">
+                                            <div class="SlackText"><span>hola</span></div>
+                                        </div><span class="Message_timestamp">11:00 PM</span>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="Input Input-blank">
+                                <textarea class="Input_field" placeholder="Enviar mensaje..."
+                                    style="height: 20px;"></textarea>
+                                <!-- <button class="Input_button Input_button-emoji">
+                                    <div class="Icon" style="width: 18px; height: 18px;">
+                                        <img src="./img/emoticon-outline.svg" alt="" height="18" width="18">
+                                    </div>
+                                </button> -->
+                                <button class="Input_button Input_button-send">
+                                    <div class="Icon">
+                                        <img src="./img/send.svg" alt="" height="18" width="18">
+                                    </div>
+                                </button>
+                            </div>
+                            <!-- Chat Mensajes -->
+                        </div>
+
+                        <div class="Messenger_content">
+                            <ui class="contacts">
+                                <li class="active">
+                                    <div class="d-flex bd-highlight">
+                                        <div class="img_cont">
+                                            <img src="https://i.pinimg.com/originals/54/6e/6d/546e6d4c6ce4322e6aa3b2f8ca73ac28.jpg"
+                                                class="rounded-circle user_img">
+                                            <span class="online_icon"></span>
+                                        </div>
+                                        <div class="user_info">
+                                            <span>Maryam Naz</span>
+                                            <p>Maryam is online</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="d-flex bd-highlight">
+                                        <div class="img_cont">
+                                            <img src="https://2.bp.blogspot.com/-8ytYF7cfPkQ/WkPe1-rtrcI/AAAAAAAAGqU/FGfTDVgkcIwmOTtjLka51vineFBExJuSACLcBGAs/s320/31.jpg"
+                                                class="rounded-circle user_img">
+                                            <span class="online_icon offline"></span>
+                                        </div>
+                                        <div class="user_info">
+                                            <span>Sahar Darya</span>
+                                            <p>Sahar left 7 mins ago</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ui>
+                        </div>
+
+                    </div>
+                </div>
+                <!--===============CHAT ON BUTTON STRART===============-->
+                <div class="chat_on">
+                    <span class="chat_on_icon">
+                        <i class="fa fa-comment" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <!--===============CHAT ON BUTTON END===============-->
+            </div>
+        </div>
+    </div>
+    <!-- CHAT -->
+    <script src="./assets/jquery-3.4.1/jquery-3.4.1.min.js"></script>
+    <script src="./assets/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(".chat_on").click(function () {
+                $(".Layout").toggle();
+                $(".chat_on").hide(300);
+            });
+
+            $(".chat_close_icon").click(function () {
+                $(".Layout").hide();
+                $(".chat_on").show(300);
+            });
+
+        });
+    </script>
+</body>
+
+</html>
